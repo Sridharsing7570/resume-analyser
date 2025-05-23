@@ -56,6 +56,8 @@ const HomePage = () => {
         }
       );
 
+      console.log(response.data);
+
       setAnalysis(response.data);
       toast({
         title: "Analysis complete",
@@ -132,7 +134,7 @@ const HomePage = () => {
               Recommended Career Paths
             </h3>
             <div className="space-y-4">
-              {analysis.careerPaths.map((career, index) => (
+              {analysis?.analysis?.careerPaths?.map((career, index) => (
                 <div
                   key={index}
                   className="border-l-4 border-green-500 pl-4 py-2"
@@ -155,7 +157,7 @@ const HomePage = () => {
               Improvement Suggestions
             </h3>
             <ul className="list-disc pl-5 space-y-2">
-              {analysis.suggestions.map((suggestion, index) => (
+              {analysis?.analysis?.suggestions?.map((suggestion, index) => (
                 <li key={index} className="text-gray-700">
                   {suggestion}
                 </li>
