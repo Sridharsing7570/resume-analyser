@@ -47,7 +47,7 @@ const HomePage = () => {
 
     try {
       const response = await axios.post(
-        "https://resume-analyser-theta.vercel.app/api/analyze",
+        "https://resume-analyser-beta.vercel.app/api/analyze",
         formData,
         {
           headers: {
