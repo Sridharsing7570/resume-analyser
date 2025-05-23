@@ -50,7 +50,7 @@ const HomePage = () => {
     formData.append("resume", file);
 
     try {
-      const response = await axios.post(`/api/analyze`, formData, {
+      const response = await axios.post(`${API_URL}/api/analyze`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
