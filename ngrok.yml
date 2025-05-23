@@ -1,0 +1,12 @@
+version: 2
+tunnels:
+    frontend: # Your React/Vite frontend (runs on port 5173)
+        addr: 5173
+        proto: http
+        host_header: "localhost:5173" # Optional: Ensures correct Host header
+    backend: # Your Node.js/Express backend (e.g., port 3000)
+        addr: 3000 # Replace with your actual backend port
+        proto: http
+    resume-analyzer:
+        proto: http
+        addr: 5000
