@@ -5,8 +5,7 @@ const connectDB = async () => {
     const conn = await mongoose.connect(
       process.env.MONGODB_URI || "mongodb://localhost:27017/resume-analyzer",
       {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+       
         writeConcern: {
           w: 1,
           j: true,
