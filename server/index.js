@@ -14,6 +14,7 @@ connectDB();
 const allowedOrigins = [
   "https://resume-analyser-fmq3.vercel.app",
   "https://resume-analyser-beta.vercel.app",
+  "https://resume-analyser-beta.vercel.app",
   "http://localhost:3000",
   "http://localhost:5000",
 ];
