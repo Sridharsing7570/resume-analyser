@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { useToast } from "../lib/use-toast";
-import axios from "axios";
-
-// API URL configuration
-const API_URL = import.meta.env.VITE_API_URL || "https://resume-analyser-beta.vercel.app";
+import api from "@/config/api";
 
 const HomePage = () => {
     const [file, setFile] = useState(null);
@@ -49,11 +46,10 @@ const HomePage = () => {
         formData.append("resume", file);
 
         try {
-            const response = await axios.post(`${API_URL}/api/analyze`, formData, {
+            const response = await api.post("/api/analyze", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
-                withCredentials: true,
             });
 
             console.log(response.data);
