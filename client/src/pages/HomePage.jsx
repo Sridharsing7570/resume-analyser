@@ -50,21 +50,33 @@ const HomePage = () => {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
+                timeout: 60000, // 60 seconds timeout for file upload
             });
 
-            console.log(response.data);
-
-            setAnalysis(response.data);
-            toast({
-                title: "Analysis complete",
-                description: "Your resume has been analyzed successfully!",
-            });
+            if (response.data) {
+                setAnalysis(response.data);
+                toast({
+                    title: "Analysis complete",
+                    description: "Your resume has been analyzed successfully!",
+                });
+            } else {
+                throw new Error("No data received from server");
+            }
         } catch (error) {
             console.error("Error analyzing resume:", error);
+            let errorMessage = "There was an error analyzing your resume";
+
+            if (error.code === "ERR_NETWORK") {
+                errorMessage = "Unable to connect to the server. Please try again later.";
+            } else if (error.response) {
+                errorMessage = error.response.data?.message || errorMessage;
+            } else if (error.request) {
+                errorMessage = "No response from server. Please try again later.";
+            }
+
             toast({
                 title: "Analysis failed",
-                description:
-                    error.response?.data?.message || "There was an error analyzing your resume",
+                description: errorMessage,
                 variant: "destructive",
             });
         } finally {
