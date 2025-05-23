@@ -6,7 +6,7 @@ import axios from "axios";
 
 // API URL configuration
 const API_URL =
-  import.meta.env.VITE_API_URL || "https://resume-analyser-beta.vercel.app";
+  import.meta.env.VITE_API_URL || "https://resume-analyser-env.eba-42cra3ib.ap-south-1.elasticbeanstalk.com";
 
 const HomePage = () => {
   const [file, setFile] = useState(null);
