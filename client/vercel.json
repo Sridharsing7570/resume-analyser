@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/*",
+      "destination": "http://resume-analyser-env.eba-42cra3ib.ap-south-1.elasticbeanstalk.com/api/*"
+    }
+  ]
+}
