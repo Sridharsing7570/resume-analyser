@@ -1,6 +1,6 @@
 // API Configuration
 export const API_URL =
-    "http://resume-analyser-v2-env.eba-htccxpau.ap-south-1.elasticbeanstalk.com/";
+    "https://resume-analyser-v2-env.eba-htccxpau.ap-south-1.elasticbeanstalk.com";
 
 // Create axios instance with default config
 import axios from "axios";
