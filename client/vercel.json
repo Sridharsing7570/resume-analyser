@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "http://resume-analyser-env.eba-42cra3ib.ap-south-1.elasticbeanstalk.com/api/:path*"
+            "destination": "https://resume-analyser-env.eba-42cra3ib.ap-south-1.elasticbeanstalk.com/api/:path*"
         }
     ],
     "buildCommand": "npm run build",
